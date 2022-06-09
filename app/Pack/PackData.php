@@ -54,9 +54,10 @@ class PackData
         return array_merge($data1, $data2);
     }
 
+    //Упаковываем серверные данные
     public function packServer($flag_success_recv)
     {
-        $crc = crc32("". 1 .  $flag_success_recv);
+        $crc = crc32("" . 1 .  $flag_success_recv);
         $pack_server = pack(
             "CCN",
             1, //client_id всегда 1
@@ -66,7 +67,7 @@ class PackData
         return $pack_server;
     }
 
-    //распаковываем клиентские данные
+    //распаковываем серверные данные
     public function unpackServer($packData): array
     {
         return unpack("Cclient_id/Cflag_success_recv/Ncrc", $packData);
