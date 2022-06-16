@@ -9,7 +9,7 @@ $packData = new PackData();
 $packResponse = $packData
     ->setClientId(3)
     ->setCommandId(5)
-    ->setData("hello")
+    ->setData("ffefef fewfwef4543")
     ->packClient();
 
 $fp = stream_socket_client("udp://$server_id:$server_port", $errno, $errstr);
